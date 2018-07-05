@@ -4,11 +4,9 @@ def count_name(name)
 
   i = 0;
 
-  for object in @journalistes
-    if (object.include?"aude")
+    @journalistes.each do |object|
+    if (object.downcase.include?name)
       i += 1
-    else
-      puts "Le nom n'a pas été trouvé"
     end
   end
   return i
@@ -28,9 +26,54 @@ def count_number()
   return i
 end
 
+def count_journalists()
+  len = @journalistes.length
+end
+
 def perform()
 
-   puts count_number()
+  puts "Il y a " + count_journalists().to_s + " journalistes dedans"
+  puts "Il y a " + count_number().to_s + " pseudo avec un nombre dedans"
+  puts "Il y a " + count_name("aude").to_s + " pseudo avec aude dedans"
+  puts "Il y a " + count_majs().to_s + " pseudo avec une majuscule dedans"
+  puts "Il y a " + count_maj().to_s + " pseudo qui commence par une maj"
+  puts "Il y a " + count_underscore().to_s + " pseudo qui ont un underscore"
+end
+
+def count_underscore()
+  i = 0;
+  @journalistes.each do |word|
+    word.each_char do |number|
+      if ("_").include?(word[number])
+        i += 1
+      end
+    end
+  end
+  return (i)
+end
+
+def count_maj()
+    count = 0
+    @journalistes.each do |word|
+      if  ("A".."Z").include?(word[1])
+        count += 1
+      end
+    end
+
+    return count
+end
+
+def count_majs()
+  i = 0;
+  @journalistes.each do |word|
+    word.each_char do |number|
+      if ("A".."Z").include?(word[number])
+        i += 1
+        break;
+      end
+    end
+  end
+  return (i)
 end
 
 perform()
