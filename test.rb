@@ -3,7 +3,6 @@
 def count_name(name)
 
   i = 0;
-  len = @journalistes.length
 
   for object in @journalistes
     if (object.include?"aude")
@@ -15,8 +14,24 @@ def count_name(name)
   return i
 end
 
+def count_number()
+
+  i = 0;
+  for object in @journalistes
+    for number in object
+      if ("0".."9").include?(number)
+        i += 1
+      else
+        puts "Le nom n'a pas été trouvé"
+      end
+    end
+  end
+  return i
+end
+
 def perform()
-   puts count_name("@Aude")
+
+   puts count_number()
 end
 
 perform()
