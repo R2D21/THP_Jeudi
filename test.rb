@@ -35,8 +35,8 @@ def perform()
   puts "Il y a " + count_journalists().to_s + " journalistes dedans"
   puts "Il y a " + count_number().to_s + " pseudo avec un nombre dedans"
   puts "Il y a " + count_name("aude").to_s + " pseudo avec aude dedans"
-  puts "Il y a " + count_majs().to_s + " pseudo avec une majuscule dedans"
   puts "Il y a " + count_maj().to_s + " pseudo qui commence par une maj"
+  puts "Il y a " + count_majs().to_s + " pseudo avec une majuscule dedans"
   puts "Il y a " + count_underscore().to_s + " pseudo qui ont un underscore"
   puts tri()
 end
