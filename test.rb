@@ -17,15 +17,14 @@ end
 def count_number()
 
   i = 0;
-  for object in @journalistes
-    for number in object
-      if ("0".."9").include?(number)
+  @journalistes.each do |word|
+    word.each_char do |number|
+      if ("0".."9").include?(word[number])
         i += 1
-      else
-        puts "Le nom n'a pas été trouvé"
       end
     end
   end
+
   return i
 end
 
