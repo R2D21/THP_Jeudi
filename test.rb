@@ -38,6 +38,7 @@ def perform()
   puts "Il y a " + count_majs().to_s + " pseudo avec une majuscule dedans"
   puts "Il y a " + count_maj().to_s + " pseudo qui commence par une maj"
   puts "Il y a " + count_underscore().to_s + " pseudo qui ont un underscore"
+  puts tri()
 end
 
 def count_underscore()
@@ -61,6 +62,11 @@ def count_maj()
     end
 
     return count
+end
+
+def tri()
+  new_array = @journalistes.sort_by { |word| word.downcase }
+return (new_array)
 end
 
 def count_majs()
